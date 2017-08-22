@@ -1,14 +1,16 @@
 const redux = require("redux");
 
 const initialState = {
-  value: 1
+  value: 1,
+  lastValue: null
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD":
       state = {
-        value: state.value + action.payload
+        value: state.value + action.payload,
+        lastValue: state.value
       };
       break;
     default:
